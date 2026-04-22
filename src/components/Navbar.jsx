@@ -1,10 +1,11 @@
 
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
   const [activeMenu, setActiveMenu] = useState(null);
+
+  const menuItem = "px-4 py-2 hover:bg-gray-100 transition duration-200";
 
   return (
     <nav className="bg-blue-900 text-white sticky top-0 z-50">
@@ -19,16 +20,19 @@ function Navbar() {
         <li
           className="relative cursor-pointer"
           onMouseEnter={() => setActiveMenu("about")}
-          onMouseLeave={() => setActiveMenu(null)}
         >
           About Us ▾
 
           {activeMenu === "about" && (
-            <ul className="absolute top-8 left-0 bg-white text-black w-56 shadow-lg rounded z-50">
-              <li className="px-4 py-2 hover:bg-gray-100">About Institute</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Director’s Message</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Vision & Mission</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Faculty</li>
+            <ul
+              className="absolute top-full left-0 bg-white text-black w-56 shadow-lg rounded z-50"
+              onMouseEnter={() => setActiveMenu("about")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <li className={menuItem}>About Institute</li>
+              <li className={menuItem}>Director’s Message</li>
+              <li className={menuItem}>Vision & Mission</li>
+              <li className={menuItem}>Faculty</li>
             </ul>
           )}
         </li>
@@ -37,16 +41,31 @@ function Navbar() {
         <li
           className="relative cursor-pointer"
           onMouseEnter={() => setActiveMenu("academics")}
-          onMouseLeave={() => setActiveMenu(null)}
         >
           Academics ▾
 
           {activeMenu === "academics" && (
-            <ul className="absolute top-8 left-0 bg-white text-black w-56 shadow-lg rounded z-50">
-              <li className="px-4 py-2 hover:bg-gray-100">Academic Calendar</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Courses</li>
-              <li className="px-4 py-2 hover:bg-gray-100">AICTE</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Ordinance</li>
+            <ul
+              className="absolute top-full left-0 bg-white text-black w-56 shadow-lg rounded z-50"
+              onMouseEnter={() => setActiveMenu("academics")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <li className={menuItem}>Academic Calendar</li>
+              <li className={menuItem}>Courses</li>
+              <li className={menuItem}>AICTE</li>
+              <li className={menuItem}>Ordinance</li>
+
+              {/* ✅ FIXED CLICK */}
+              <li className="hover:bg-gray-100 transition duration-200">
+                <a
+                  href="https://drive.google.com/drive/folders/1QSZs3pydG7zdzx3zJ6rtdPcZIhntzSWd"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-4 py-2 w-full h-full"
+                >
+                  Previous Year Papers
+                </a>
+              </li>
             </ul>
           )}
         </li>
@@ -55,15 +74,18 @@ function Navbar() {
         <li
           className="relative cursor-pointer"
           onMouseEnter={() => setActiveMenu("departments")}
-          onMouseLeave={() => setActiveMenu(null)}
         >
           Departments ▾
 
           {activeMenu === "departments" && (
-            <ul className="absolute top-8 left-0 bg-white text-black w-56 shadow-lg rounded z-50">
-              <li className="px-4 py-2 hover:bg-gray-100">CSE</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Mechanical</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Civil</li>
+            <ul
+              className="absolute top-full left-0 bg-white text-black w-56 shadow-lg rounded z-50"
+              onMouseEnter={() => setActiveMenu("departments")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <li className={menuItem}>CSE</li>
+              <li className={menuItem}>Mechanical</li>
+              <li className={menuItem}>Civil</li>
             </ul>
           )}
         </li>
@@ -72,15 +94,18 @@ function Navbar() {
         <li
           className="relative cursor-pointer"
           onMouseEnter={() => setActiveMenu("admission")}
-          onMouseLeave={() => setActiveMenu(null)}
         >
           Admission ▾
 
           {activeMenu === "admission" && (
-            <ul className="absolute top-8 left-0 bg-white text-black w-56 shadow-lg rounded z-50">
-              <li className="px-4 py-2 hover:bg-gray-100">Admission Courses</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Fees Structure</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Admission Notification</li>
+            <ul
+              className="absolute top-full left-0 bg-white text-black w-56 shadow-lg rounded z-50"
+              onMouseEnter={() => setActiveMenu("admission")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <li className={menuItem}>Admission Courses</li>
+              <li className={menuItem}>Fees Structure</li>
+              <li className={menuItem}>Admission Notification</li>
             </ul>
           )}
         </li>
@@ -89,18 +114,21 @@ function Navbar() {
         <li
           className="relative cursor-pointer"
           onMouseEnter={() => setActiveMenu("campus")}
-          onMouseLeave={() => setActiveMenu(null)}
         >
           Campus Life ▾
 
           {activeMenu === "campus" && (
-            <ul className="absolute top-8 left-0 bg-white text-black w-56 shadow-lg rounded z-50">
-              <li className="px-4 py-2 hover:bg-gray-100">Student Clubs</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Download Forms</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Central Library</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Hostel</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Computer Center</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Games & Sports</li>
+            <ul
+              className="absolute top-full left-0 bg-white text-black w-56 shadow-lg rounded z-50"
+              onMouseEnter={() => setActiveMenu("campus")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <li className={menuItem}>Student Clubs</li>
+              <li className={menuItem}>Download Forms</li>
+              <li className={menuItem}>Central Library</li>
+              <li className={menuItem}>Hostel</li>
+              <li className={menuItem}>Computer Center</li>
+              <li className={menuItem}>Games & Sports</li>
             </ul>
           )}
         </li>
@@ -109,15 +137,18 @@ function Navbar() {
         <li
           className="relative cursor-pointer"
           onMouseEnter={() => setActiveMenu("gallery")}
-          onMouseLeave={() => setActiveMenu(null)}
         >
           Gallery ▾
 
           {activeMenu === "gallery" && (
-            <ul className="absolute top-8 left-0 bg-white text-black w-56 shadow-lg rounded z-50">
-              <li className="px-4 py-2 hover:bg-gray-100">Photo Gallery</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Video Gallery</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Media Gallery</li>
+            <ul
+              className="absolute top-full left-0 bg-white text-black w-56 shadow-lg rounded z-50"
+              onMouseEnter={() => setActiveMenu("gallery")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <li className={menuItem}>Photo Gallery</li>
+              <li className={menuItem}>Video Gallery</li>
+              <li className={menuItem}>Media Gallery</li>
             </ul>
           )}
         </li>
@@ -126,17 +157,20 @@ function Navbar() {
         <li
           className="relative cursor-pointer"
           onMouseEnter={() => setActiveMenu("placement")}
-          onMouseLeave={() => setActiveMenu(null)}
         >
           Placement Cell ▾
 
           {activeMenu === "placement" && (
-            <ul className="absolute top-8 left-0 bg-white text-black w-56 shadow-lg rounded z-50">
-              <li className="px-4 py-2 hover:bg-gray-100">About Placement Cell</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Placement</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Placement Brochure</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Placement Records</li>
-              <li className="px-4 py-2 hover:bg-gray-100">Placement Gallery</li>
+            <ul
+              className="absolute top-full left-0 bg-white text-black w-56 shadow-lg rounded z-50"
+              onMouseEnter={() => setActiveMenu("placement")}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <li className={menuItem}>About Placement Cell</li>
+              <li className={menuItem}>Placement</li>
+              <li className={menuItem}>Placement Brochure</li>
+              <li className={menuItem}>Placement Records</li>
+              <li className={menuItem}>Placement Gallery</li>
             </ul>
           )}
         </li>
